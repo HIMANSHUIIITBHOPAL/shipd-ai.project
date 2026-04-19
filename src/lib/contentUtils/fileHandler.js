@@ -34,7 +34,7 @@ const getMode = (filePath, mode) => {
 export default class FileHandler {
   static read = (globPattern, mode) => {
     mode = getMode(globPattern, mode);
-    const files = globSync(globPattern);
+    const files = globSync(globPattern.replace(/\\/g, '/'), { posix: true });
 
     if (files.length === 0) return null;
     if (files.length === 1) return parseFile(files[0], mode);

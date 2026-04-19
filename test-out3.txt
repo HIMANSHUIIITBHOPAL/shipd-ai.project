@@ -1,0 +1,24 @@
+
+[1m[7m[36m RUN [39m[27m[22m [36mv3.1.1 [39m[90mC:/Users/HP/Desktop/shipd ai.project[39m
+
+ [32m✓[39m spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js [2m([22m[2m27 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m spec/lib/stringUtils.test.js [2m([22m[2m12 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m spec/core/model.test.js [2m([22m[2m13 tests[22m[2m)[22m[32m 16[2mms[22m[39m
+ [32m✓[39m spec/lib/contentUtils/ranker.test.js [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m spec/core/serializer.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m spec/lib/search/utils.test.js [2m([22m[2m14 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m spec/lib/contentUtils/tocReader.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m spec/presenters/recommendationPresenter.test.js [2m([22m[2m5 tests[22m[2m)[22m[32m 5[2mms[22m[39m
+ [32m✓[39m spec/presenters/coverPresenter.test.js [2m([22m[2m6 tests[22m[2m)[22m[32m 7[2mms[22m[39m
+ [32m✓[39m spec/presenters/breadcrumbPresenter.test.js [2m([22m[2m2 tests[22m[2m)[22m[32m 6[2mms[22m[39m
+ [32m✓[39m spec/models/collection.test.js [2m([22m[2m27 tests[22m[2m)[22m[32m 15[2mms[22m[39m
+ [32m✓[39m spec/presenters/sublinkPresenter.test.js [2m([22m[2m4 tests[22m[2m)[22m[32m 20[2mms[22m[39m
+ [32m✓[39m spec/models/contentModel.test.js [2m([22m[2m12 tests[22m[2m)[22m[32m 32[2mms[22m[39m
+ [32m✓[39m spec/models/snippet.test.js [2m([22m[2m27 tests[22m[2m)[22m[32m 38[2mms[22m[39m
+ [32m✓[39m spec/lib/contentUtils/contentUtils.test.js [2m([22m[2m28 tests[22m[2m | [22m[33m1 skipped[39m[2m)[22m[32m 7[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m15 passed[39m[22m[90m (15)[39m
+[2m      Tests [22m [1m[32m183 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (184)[39m
+[2m   Start at [22m 02:43:05
+[2m   Duration [22m 2.85s[2m (transform 1.15s, setup 0ms, collect 11.78s, tests 182ms, environment 5ms, prepare 3.25s)[22m
+

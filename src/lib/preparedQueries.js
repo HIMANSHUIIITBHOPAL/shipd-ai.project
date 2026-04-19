@@ -58,7 +58,7 @@ export default class PreparedQueries {
   }
 
   static duplicateReferences() {
-    const references = globSync(settings.paths.languagesGlob)
+    const references = globSync(settings.paths.languagesGlob.replace(/\\/g, '/'), { posix: true })
       .map(file => yaml.load(fs.readFileSync(file, 'utf8')))
       .filter(language => language.references && language.references.length > 1)
       .reduce((acc, language) => {

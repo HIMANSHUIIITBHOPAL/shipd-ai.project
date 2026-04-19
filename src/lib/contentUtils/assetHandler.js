@@ -43,7 +43,7 @@ export default class AssetHandler {
   static async processAssets({ force = false }) {
     const convertedAssets = [
       ...new Set(
-        globSync(convertedAssetGlobPattern).map(asset =>
+        globSync(convertedAssetGlobPattern.replace(/\\/g, '/'), { posix: true }).map(asset =>
           asset
             .replace(`${publicOutputPath}/`, '')
             .split('.')[0]
@@ -52,7 +52,7 @@ export default class AssetHandler {
       ),
     ];
 
-    let unconvertedAssets = globSync(unconvertedAssetGlobPattern).map(
+    let unconvertedAssets = globSync(unconvertedAssetGlobPattern.replace(/\\/g, '/'), { posix: true }).map(
       fileName => {
         const directory = fileName.split('/')[2];
         return {

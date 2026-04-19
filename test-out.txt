@@ -1,0 +1,330 @@
+
+[1m[7m[36m RUN [39m[27m[22m [36mv3.1.1 [39m[90mC:/Users/HP/Desktop/shipd ai.project[39m
+
+ [31m❯[39m spec/lib/contentUtils/contentUtils.test.js [2m([22m[2m28 tests[22m[2m | [22m[31m16 failed[39m[2m | [22m[33m1 skipped[39m[2m)[22m[32m 23[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output content to the correct path[32m 1[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output all content keys[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct language data[2m > [22mshould output the correct number of languages[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct language data[2m > [22mshould output the correct language objects[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct collection data[2m > [22mshould output the correct number of collections[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct collection data[2m > [22mshould output the correct collection ids[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct collection data[2m > [22mshould produce a ranking between 0 and 1 for all collections[32m 0[2mms[22m[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct number of collection snippets[39m[32m 8[2mms[22m[39m
+[31m     → expected 10 to deeply equal 13[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for plain tag matchers[39m[32m 1[2mms[22m[39m
+[31m     → expected +0 to deeply equal 1[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for language matchers[39m[32m 2[2mms[22m[39m
+[31m     → expected [ …(4) ] to deeply equal [ 'js/s/array-compare', …(3) ][39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for language and tag matchers[39m[32m 1[2mms[22m[39m
+[31m     → expected [ …(3) ] to deeply equal [ 'js/s/array-compare', …(2) ][39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for specific snippet ids[2m > [22mshould output the correct collection snippets[39m[32m 0[2mms[22m[39m
+[31m     → expected +0 to deeply equal 3[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for specific snippet ids[2m > [22mshould output the collection snippets in the right order[39m[32m 1[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'snippetId')[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould output the correct number of snippets[32m 0[2mms[22m[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould output the correct snippet ids[39m[32m 1[2mms[22m[39m
+[31m     → expected [ …(7) ] to deeply equal [ …(7) ][39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould produce a ranking between 0 and 1 for all snippets[32m 0[2mms[22m[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould produce a semicolon separated list of tags[32m 0[2mms[22m[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould match to the correct languageId[39m[32m 1[2mms[22m[39m
+[31m     → expected 'javascript' to be null // Object.is equality[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould produce the correct listed attribute[39m[32m 3[2mms[22m[39m
+[31m     → expected 'spec\fixtures\content\snippets\articl…' to be 'articles/s/web-development-tips' // Object.is equality[39m
+   [32m✓[39m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould produce an HTML content and description[32m 0[2mms[22m[39m
+   [2m[90m↓[39m[22m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould highlight code blocks
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould link inline code only if the language references match it[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould safeguard only external links[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform headings[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform image paths[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould wrap tables[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould embed codepens from links[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+[31m   [31m×[31m ContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform admonitions[39m[32m 0[2mms[22m[39m
+[31m     → Cannot read properties of undefined (reading 'content')[39m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m16 failed[39m[22m[2m | [22m[1m[32m11 passed[39m[22m[2m | [22m[33m1 skipped[39m[90m (28)[39m
+[2m   Start at [22m 02:40:53
+[2m   Duration [22m 1.68s[2m (transform 199ms, setup 0ms, collect 1.25s, tests 23ms, environment 0ms, prepare 134ms)[22m
+
+
+[2m2:40:54 am[22m [33m[1m[vite][22m[39m [33m[2m(ssr)[22m[39m [33mwarning: Missing "./${lang}" specifier in "@shikijs/langs" package[39m
+  Plugin: [35mvite:dynamic-import-vars[39m
+  File: [36mC:/Users/HP/Desktop/shipd ai.project/src/lib/contentUtils/markdownParser/codeHighlighters/shiki.js[39m
+[90mstderr[2m | spec/lib/contentUtils/contentUtils.test.js
+[22m[39mSnippet js/s/array-map-foreach not found in collection js/array-methods
+Snippet js/s/array-compare not found in collection js/array-methods
+Snippet js/s/array-initialize not found in collection js/array-methods
+
+
+[31m⎯⎯⎯⎯⎯⎯[1m[7m Failed Tests 16 [27m[22m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct number of collection snippets
+[31m[1mAssertionError[22m: expected 10 to deeply equal 13[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 13[39m
+[31m+ 10[39m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m101:44[22m[39m
+    [90m 99| [39m
+    [90m100| [39m    it('should output the correct number of collection snippets', () =…
+    [90m101| [39m      [34mexpect[39m(collectionSnippetData[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m13[39m)[33m;[39m
+    [90m   | [39m                                           [31m^[39m
+    [90m102| [39m    })[33m;[39m
+    [90m103| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for plain tag matchers
+[31m[1mAssertionError[22m: expected +0 to deeply equal 1[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 1[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m111:9[22m[39m
+    [90m109| [39m            snippetId [33m===[39m [32m'articles/s/web-development-tips'[39m
+    [90m110| [39m        )[33m.[39mlength
+    [90m111| [39m      )[33m.[39m[34mtoEqual[39m([34m1[39m)[33m;[39m
+    [90m   | [39m        [31m^[39m
+    [90m112| [39m    })[33m;[39m
+    [90m113| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for language matchers
+[31m[1mAssertionError[22m: expected [ …(4) ] to deeply equal [ 'js/s/array-compare', …(3) ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[32m-   "js/s/array-compare",[39m
+[32m-   "js/s/array-grouping",[39m
+[32m-   "js/s/array-initialize",[39m
+[32m-   "js/s/array-map-foreach",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-compare",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-grouping",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-initialize",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-map-foreach",[39m
+[2m  ][22m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m123:67[22m[39m
+    [90m121| [39m      [34mexpect[39m(jsSnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m4[39m)[33m;[39m
+    [90m122| [39m      [34mexpect[39m(cssSnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m2[39m)[33m;[39m
+    [90m123| [39m      expect(jsSnippets.map(({ snippetId }) => snippetId).sort()).toEq…
+    [90m   | [39m                                                                  [31m^[39m
+    [90m124| [39m        [
+    [90m125| [39m          [32m'js/s/array-grouping'[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for language and tag matchers
+[31m[1mAssertionError[22m: expected [ …(3) ] to deeply equal [ 'js/s/array-compare', …(2) ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[32m-   "js/s/array-compare",[39m
+[32m-   "js/s/array-grouping",[39m
+[32m-   "js/s/array-initialize",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-compare",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-grouping",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-initialize",[39m
+[2m  ][22m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m141:72[22m[39m
+    [90m139| [39m      )[33m;[39m
+    [90m140| [39m      [34mexpect[39m(jsArraySnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m3[39m)[33m;[39m
+    [90m141| [39m      expect(jsArraySnippets.map(({ snippetId }) => snippetId).sort())…
+    [90m   | [39m                                                                       [31m^[39m
+    [90m142| [39m        [
+    [90m143| [39m          [32m'js/s/array-grouping'[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for specific snippet ids[2m > [22mshould output the correct collection snippets
+[31m[1mAssertionError[22m: expected +0 to deeply equal 3[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- 3[39m
+[31m+ 0[39m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m156:47[22m[39m
+    [90m154| [39m
+    [90m155| [39m      [34mit[39m([32m'should output the correct collection snippets'[39m[33m,[39m () [33m=>[39m {
+    [90m156| [39m        [34mexpect[39m(jsArrayMethodsSnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m3[39m)[33m;[39m
+    [90m   | [39m                                              [31m^[39m
+    [90m157| [39m        [34mexpect[39m(
+    [90m158| [39m          jsArrayMethodsSnippets[33m.[39m[34mmap[39m(({ snippetId }) [33m=>[39m snippetId)
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct collection snippet data[2m > [22mshould output the correct collection snippet objects for specific snippet ids[2m > [22mshould output the collection snippets in the right order
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'snippetId')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m169:13[22m[39m
+    [90m167| [39m        [34mexpect[39m(
+    [90m168| [39m          jsArrayMethodsSnippets[33m.[39m[34mfind[39m(({ position }) [33m=>[39m position [33m===[39m [34m0[39m)
+    [90m169| [39m            [33m.[39msnippetId
+    [90m   | [39m            [31m^[39m
+    [90m170| [39m        )[33m.[39m[34mtoBe[39m([32m'js/s/array-map-foreach'[39m)[33m;[39m
+    [90m171| [39m        [34mexpect[39m(
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould output the correct snippet ids
+[31m[1mAssertionError[22m: expected [ …(7) ] to deeply equal [ …(7) ][39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[2m  [[22m
+[32m-   "articles/s/web-development-tips",[39m
+[32m-   "css/s/content-centering",[39m
+[32m-   "css/s/css-reset",[39m
+[32m-   "js/s/array-compare",[39m
+[32m-   "js/s/array-grouping",[39m
+[32m-   "js/s/array-initialize",[39m
+[32m-   "js/s/array-map-foreach",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\articles\\s\\web-development-tips",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\css\\s\\content-centering",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\css\\s\\css-reset",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-compare",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-grouping",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-initialize",[39m
+[31m+   "spec\\fixtures\\content\\snippets\\js\\s\\array-map-foreach",[39m
+[2m  ][22m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m191:54[22m[39m
+    [90m189| [39m
+    [90m190| [39m    [34mit[39m([32m'should output the correct snippet ids'[39m[33m,[39m () [33m=>[39m {
+    [90m191| [39m      [34mexpect[39m(snippetData[33m.[39m[34mmap[39m(({ id }) [33m=>[39m id)[33m.[39m[34msort[39m())[33m.[39m[34mtoEqual[39m(
+    [90m   | [39m                                                     [31m^[39m
+    [90m192| [39m        [
+    [90m193| [39m          [32m'articles/s/web-development-tips'[39m[33m,[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould match to the correct languageId
+[31m[1mAssertionError[22m: expected 'javascript' to be null // Object.is equality[39m
+
+[32m- Expected:[39m 
+null
+
+[31m+ Received:[39m 
+"javascript"
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m224:30[22m[39m
+    [90m222| [39m          [34mexpect[39m(languageId)[33m.[39m[34mtoBe[39m([32m'css'[39m)[33m;[39m
+    [90m223| [39m        } [35melse[39m {
+    [90m224| [39m          [34mexpect[39m(languageId)[33m.[39m[34mtoBe[39m([35mnull[39m)[33m;[39m
+    [90m   | [39m                             [31m^[39m
+    [90m225| [39m        }
+    [90m226| [39m      })[33m;[39m
+[90m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m218:19[22m[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mshould produce the correct listed attribute
+[31m[1mAssertionError[22m: expected 'spec\fixtures\content\snippets\articl…' to be 'articles/s/web-development-tips' // Object.is equality[39m
+
+Expected: [32m"articles[7m/s/[27mweb-development-tips"[39m
+Received: [31m"[7mspec\fixtures\content\snippets\[27marticles[7m\s\[27mweb-development-tips"[39m
+
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m234:38[22m[39m
+    [90m232| [39m      [34mexpect[39m(listedSnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m6[39m)[33m;[39m
+    [90m233| [39m      [34mexpect[39m(unlistedSnippets[33m.[39mlength)[33m.[39m[34mtoEqual[39m([34m1[39m)[33m;[39m
+    [90m234| [39m      expect(unlistedSnippets[0].id).toBe('articles/s/web-development-…
+    [90m   | [39m                                     [31m^[39m
+    [90m235| [39m    })[33m;[39m
+    [90m236| [39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould link inline code only if the language references match it
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m269:26[22m[39m
+    [90m267| [39m          ({ id }) [33m=>[39m id [33m===[39m [32m'articles/s/web-development-tips'[39m
+    [90m268| [39m        )[33m;[39m
+    [90m269| [39m        [34mexpect[39m(jsSnippet[33m.[39mcontent)[33m.[39m[34mtoContain[39m(arrayFromReference)[33m;[39m
+    [90m   | [39m                         [31m^[39m
+    [90m270| [39m        [34mexpect[39m(noJsSnippet[33m.[39mcontent)[33m.[39mnot[33m.[39m[34mtoContain[39m(arrayFromReference)[33m;[39m
+    [90m271| [39m      })[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould safeguard only external links
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m280:36[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform headings
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m292:36[22m[39m
+
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform image paths
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m301:34[22m[39m
+    [90m299| [39m          ({ id }) [33m=>[39m id [33m===[39m [32m'articles/s/web-development-tips'[39m
+    [90m300| [39m        )[33m;[39m
+    [90m301| [39m        [34mexpect[39m(snippetWithImages[33m.[39mcontent)[33m.[39m[34mtoContain[39m(
+    [90m   | [39m                                 [31m^[39m
+    [90m302| [39m          '<img src="/assets/illustrations/flexbox-diagram.svg" alt="D…
+    [90m303| [39m        )[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould wrap tables
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m310:34[22m[39m
+    [90m308| [39m          ({ id }) [33m=>[39m id [33m===[39m [32m'articles/s/web-development-tips'[39m
+    [90m309| [39m        )[33m;[39m
+    [90m310| [39m        [34mexpect[39m(snippetWithTables[33m.[39mcontent)[33m.[39m[34mtoContain[39m(
+    [90m   | [39m                                 [31m^[39m
+    [90m311| [39m          [32m'<figure class="table-wrapper"><table>'[39m
+    [90m312| [39m        )[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould embed codepens from links
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m319:34[22m[39m
+    [90m317| [39m          ({ id }) [33m=>[39m id [33m===[39m [32m'css/s/content-centering'[39m
+    [90m318| [39m        )[33m;[39m
+    [90m319| [39m        expect(snippetWithTables.content).toContain('<p class="codepen…
+    [90m   | [39m                                 [31m^[39m
+    [90m320| [39m        [34mexpect[39m(snippetWithTables[33m.[39mcontent)[33m.[39m[34mtoContain[39m(
+    [90m321| [39m          '<span>See the <a href="https://codepen.io/chalarangelo/pen/…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/16]⎯[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m spec/lib/contentUtils/contentUtils.test.js[2m > [22mContentUtils.prepareContent[2m > [22mshould output the correct snippet data[2m > [22mMarkdown parsing[2m > [22mshould transform admonitions
+[31m[1mTypeError[22m: Cannot read properties of undefined (reading 'content')[39m
+[36m [2m❯[22m spec/lib/contentUtils/contentUtils.test.js:[2m332:39[22m[39m
+    [90m330| [39m          ({ id }) [33m=>[39m id [33m===[39m [32m'articles/s/web-development-tips'[39m
+    [90m331| [39m        )[33m;[39m
+    [90m332| [39m        [34mexpect[39m(snippetWithAdmonitions[33m.[39mcontent)[33m.[39m[34mtoContain[39m(
+    [90m   | [39m                                      [31m^[39m
+    [90m333| [39m          [32m'<figcaption>💡  Tip</figcaption>'[39m
+    [90m334| [39m        )[33m;[39m
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/16]⎯[22m[39m
+
