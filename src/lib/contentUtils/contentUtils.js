@@ -8,12 +8,16 @@ import AssetHandler from '#src/lib/contentUtils/assetHandler.js';
 import ContentCreator from '#src/lib/contentUtils/contentCreator.js';
 import ComponentCreator from '#src/lib/contentUtils/componentCreator.js';
 import FileWatcher from '#src/lib/contentUtils/fileWatcher.js';
+import ContentLinter from '#src/lib/contentUtils/contentLinter.js';
 import { outputPath } from '#src/lib/contentUtils/config.js';
 
 export default class ContentUtils {
   static async prepareContent({ fastHighlight = false } = {}) {
     const { collections, snippets, languages, collectionSnippets } =
       await extractData(fastHighlight ? 'prism' : 'shiki');
+
+    // Run the linter over extracted snippets to ensure data validity
+    await ContentLinter.lint(snippets);
 
     const data = {
       collections: exportCollectionData(collections),
