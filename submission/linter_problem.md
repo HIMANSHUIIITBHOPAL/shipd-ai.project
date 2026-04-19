@@ -1,18 +1,20 @@
-Title: Feature Request: Add Content Linter to Build Pipeline
+## Goal
+Add a strict content static-analyzer (linter) to the build pipeline to prevent malformed snippets or collections from being generated into the site content. 
 
-Problem Description:
-The current content pipeline lacks static analysis, meaning snippets with invalid formatting or non-existent tags can be deployed. We need to introduce a strict `ContentLinter` module to intercept the build pipeline and abort it if formatting rules are violated.
+## Expected Behavior
+You must implement a new module at exactly `#src/lib/contentUtils/contentLinter.js`. This file must export a default object or class named `ContentLinter`.
 
-Create a new static analysis module `src/lib/contentUtils/contentLinter.js` that exports a `ContentLinter` class. This class must implement an `async lint(snippets)` method that processes all extracted snippet data right before they are mapped in `src/lib/contentUtils/contentUtils.js`'s `prepareContent` method.
+Your `ContentLinter` must provide the following method:
+`async function lint(snippets: Array<Snippet>): Promise<boolean>`
 
-Your `ContentLinter` must enforce the following strict formatting rules on every snippet:
-1. **Title Validation**: The snippet must have a `title`. If present, the title must be no longer than 80 characters.
-2. **Tag Validation**: The snippet must define at least one tag. Every tag applied must strictly exist as a key within the global `settings.tags` object imported from `#src/config/settings.js`.
-3. **Description Validation**: `descriptionHtml` must be present. When stripped of its HTML tags, the plain text text must be between 10 and 500 characters.
-4. **Link Validation**: The snippet's `fullDescriptionHtml` must not contain any hardcoded localhost URLs (e.g., `href="http://localhost:3000..."`).
+This method MUST resolve `true` on success. On failure, it MUST reject by throwing an `Error`. The thrown error message must begin with exactly this top-level prefix: `'Content Linter Validation Failed'`.
 
-If any snippet violates one or more rules, the Linter must aggregate all violations across all snippets and throw a formatted `Error` containing a summary of the failing snippet IDs and their exact violations. 
+The linter must enforce the following validation rules on every snippet. If any rules are violated, the exact rule-specific phrases listed below must be included in the aggregated error message:
+1. **Title**: The snippet must have a `title`. If missing, the error must contain: `'Snippet is missing a title'`.
+2. **Tags**: The `snippet.tags` property will be passed as a semicolon-delimited string (e.g. `'javascript;node'`). You must parse it and verify every tag exists as a key in `settings.tags` (imported from `#src/config/settings.js`).
+3. **Description**: `descriptionHtml` must be present. When stripped of its HTML tags, the plain text length must be at most 500 characters. If it exceeds this, the error must contain: `'Description text is too long'`.
+4. **Links**: The snippet's HTML content must not contain any hardcoded localhost URLs. If found, the error must contain: `'Content contains hardcoded localhost URLs'`.
 
-To complete this ticket:
-1. Build the new `ContentLinter` class at `src/lib/contentUtils/contentLinter.js`.
-2. Hook it into the pipeline inside `src/lib/contentUtils/contentUtils.js` by awaiting `ContentLinter.lint(snippets)` right after `extractData` completes.
+## Constraints
+* Do not disable or break existing content generation. 
+* The linter should aggregate all snippet violations across all rules before throwing its final Error.
