@@ -30,20 +30,20 @@ export default class ContentLinter {
       const snippetViolations = [];
 
       // Run modular validators
-      const titleRes = this.validateTitle(snippet.title);
+      const titleRes = this.validateTitle(snippet?.title);
       if (!titleRes.isValid) snippetViolations.push(...titleRes.error);
 
-      const tagsRes = this.validateTags(snippet.tags, validTags);
+      const tagsRes = this.validateTags(snippet?.tags, validTags);
       if (!tagsRes.isValid) snippetViolations.push(...tagsRes.error);
 
-      const descRes = this.validateDescription(snippet.descriptionHtml);
+      const descRes = this.validateDescription(snippet?.descriptionHtml);
       if (!descRes.isValid) snippetViolations.push(...descRes.error);
 
-      const linkRes = this.validateLinks(snippet.fullDescriptionHtml);
+      const linkRes = this.validateLinks(snippet?.fullDescriptionHtml);
       if (!linkRes.isValid) snippetViolations.push(...linkRes.error);
 
       if (snippetViolations.length > 0) {
-        violations.push({ snippetId: snippet.id, errors: snippetViolations });
+        violations.push({ snippetId: snippet?.id || 'unknown', errors: snippetViolations });
       }
     }
 
@@ -83,7 +83,7 @@ export default class ContentLinter {
   static validateDescription(descriptionHtml) {
     const errors = [];
     if (!descriptionHtml) {
-      errors.push('Snippet is missing a short description/excerpt.');
+      errors.push('Snippet is missing a short description.');
       return new ValidationResult(false, errors);
     }
     // Strip HTML to check real text length safely
@@ -111,7 +111,7 @@ export default class ContentLinter {
   }
 
   static formatAndThrow(violations) {
-    let errorMessage = '\n\n=== Content Linter Validation Failed ===\n';
+    let errorMessage = 'Content Linter Validation Failed\n';
     errorMessage += `Linter found exactly ${violations.length} snippet(s) containing strictly invalid formatting:\n\n`;
     
     for (const violation of violations) {

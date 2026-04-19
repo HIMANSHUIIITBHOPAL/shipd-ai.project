@@ -21,6 +21,21 @@ describe('ContentLinter', () => {
     ...overrides,
   });
 
+  const expectLinterFailure = async (snippets, expectedPhrases) => {
+    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
+    try {
+      await ContentLinter.lint(snippets);
+      expect.fail('Linter should have thrown an error but passed.');
+    } catch (err) {
+      // Must start with exactly the requested prefix
+      expect(err.message.startsWith('Content Linter Validation Failed')).toBe(true);
+      
+      expectedPhrases.forEach(phrase => {
+        expect(err.message).toContain(phrase);
+      });
+    }
+  };
+
   it('should pass for a valid snippet', async () => {
     expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
     const result = await ContentLinter.lint([getValidSnippet()]);
@@ -28,56 +43,40 @@ describe('ContentLinter', () => {
   });
 
   it('should handle title validation and edge cases', async () => {
-    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
-    const noTitle = getValidSnippet({ title: '' });
+    await expectLinterFailure([getValidSnippet({ title: null })], ['Snippet is missing a title']);
+    await expectLinterFailure([getValidSnippet({ title: undefined })], ['Snippet is missing a title']);
+    await expectLinterFailure([getValidSnippet({ title: '' })], ['Snippet is missing a title']);
     const longTitleText = 'A'.repeat(81);
-    const longTitle = getValidSnippet({ title: longTitleText });
-
-    await expect(ContentLinter.lint([noTitle])).rejects.toThrow(/Snippet is missing a title/);
-    await expect(ContentLinter.lint([longTitle])).rejects.toThrow(/Title exceeds maximum length/);
+    await expectLinterFailure([getValidSnippet({ title: longTitleText })], ['Title exceeds maximum length']);
   });
 
   it('should handle tag validation', async () => {
-    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
-    const missingTags = getValidSnippet({ tags: '' });
-    const invalidTags = getValidSnippet({ tags: 'javascript;made-up-tag' });
-
-    await expect(ContentLinter.lint([missingTags])).rejects.toThrow(/Snippet is missing tags/);
-    await expect(ContentLinter.lint([invalidTags])).rejects.toThrow(/Validation Failed/); // Generalized check
+    await expectLinterFailure([getValidSnippet({ tags: null })], ['Snippet is missing tags']);
+    await expectLinterFailure([getValidSnippet({ tags: undefined })], ['Snippet is missing tags']);
+    await expectLinterFailure([getValidSnippet({ tags: '' })], ['Snippet is missing tags']);
+    await expectLinterFailure([getValidSnippet({ tags: 'javascript;made-up-tag' })], ['Invalid tag used']);
   });
 
-  it('should handle description validation (length bounds)', async () => {
-    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
+  it('should handle description validation (length bounds and missing)', async () => {
     const longDesc = 'A'.repeat(501);
-    const invalidDescSnippet = getValidSnippet({ descriptionHtml: `<p>${longDesc}</p>` });
-    const shortDescSnippet = getValidSnippet({ descriptionHtml: '<p>A</p>' });
-    const noDescSnippet = getValidSnippet({ descriptionHtml: null });
-
-    await expect(ContentLinter.lint([invalidDescSnippet])).rejects.toThrow(/Description text is too long/);
-    await expect(ContentLinter.lint([shortDescSnippet])).rejects.toThrow(/Description text is too short/);
-    await expect(ContentLinter.lint([noDescSnippet])).rejects.toThrow(/Snippet is missing a short description/);
+    await expectLinterFailure([getValidSnippet({ descriptionHtml: `<p>${longDesc}</p>` })], ['Description text is too long']);
+    await expectLinterFailure([getValidSnippet({ descriptionHtml: '<p>A</p>' })], ['Description text is too short']);
+    await expectLinterFailure([getValidSnippet({ descriptionHtml: null })], ['Snippet is missing a short description']);
+    await expectLinterFailure([getValidSnippet({ descriptionHtml: undefined })], ['Snippet is missing a short description']);
   });
 
   it('should handle localhost links', async () => {
-    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
-    const badLinkSnippet = getValidSnippet({ fullDescriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' });
-
-    await expect(ContentLinter.lint([badLinkSnippet])).rejects.toThrow(/Content contains hardcoded localhost URLs/);
+    await expectLinterFailure([getValidSnippet({ fullDescriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' })], ['Content contains hardcoded localhost URLs']);
   });
 
   it('should aggregate multiple violations across multiple snippets', async () => {
-    expect(ContentLinter, 'ContentLinter module has not been implemented!').not.toBeNull();
-    const snippet1 = getValidSnippet({ title: '', tags: '' }); // Two errors
+    const snippet1 = getValidSnippet({ title: '', tags: null }); // Two errors
     const snippet2 = getValidSnippet({ descriptionHtml: `<p>${'A'.repeat(501)}</p>` }); // One error
 
-    try {
-      await ContentLinter.lint([snippet1, snippet2]);
-      expect.fail('Should have thrown an error');
-    } catch (err) {
-      expect(err.message).toMatch(/Content Linter Validation Failed/);
-      expect(err.message).toMatch(/Snippet is missing a title/);
-      expect(err.message).toMatch(/Snippet is missing tags/);
-      expect(err.message).toMatch(/Description text is too long/);
-    }
+    await expectLinterFailure([snippet1, snippet2], [
+      'Snippet is missing a title',
+      'Snippet is missing tags',
+      'Description text is too long'
+    ]);
   });
 });
