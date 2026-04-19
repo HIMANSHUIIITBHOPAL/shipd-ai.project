@@ -1,0 +1,61 @@
+diff --git a/src/lib/contentComponents.js b/src/lib/contentComponents.js
+index 5f8eff200..52d66e3df 100644
+--- a/src/lib/contentComponents.js
++++ b/src/lib/contentComponents.js
+@@ -27,7 +27,7 @@ export default class ContentComponents {
+     fs.ensureDirSync(stylesDestPath);
+ 
+     // Find all .scss files in the source directory
+-    const scssFiles = globSync(`${stylesPath}/**/*.scss`);
++    const scssFiles = globSync(`${stylesPath}/**/*.scss`.replace(/\\/g, '/'), { posix: true });
+ 
+     // Process each .scss file
+     scssFiles.forEach(file => {
+diff --git a/src/lib/contentUtils/assetHandler.js b/src/lib/contentUtils/assetHandler.js
+index d3a4d94e3..05464446b 100644
+--- a/src/lib/contentUtils/assetHandler.js
++++ b/src/lib/contentUtils/assetHandler.js
+@@ -43,7 +43,7 @@ export default class AssetHandler {
+   static async processAssets({ force = false }) {
+     const convertedAssets = [
+       ...new Set(
+-        globSync(convertedAssetGlobPattern).map(asset =>
++        globSync(convertedAssetGlobPattern.replace(/\\/g, '/'), { posix: true }).map(asset =>
+           asset
+             .replace(`${publicOutputPath}/`, '')
+             .split('.')[0]
+@@ -52,7 +52,7 @@ export default class AssetHandler {
+       ),
+     ];
+ 
+-    let unconvertedAssets = globSync(unconvertedAssetGlobPattern).map(
++    let unconvertedAssets = globSync(unconvertedAssetGlobPattern.replace(/\\/g, '/'), { posix: true }).map(
+       fileName => {
+         const directory = fileName.split('/')[2];
+         return {
+diff --git a/src/lib/contentUtils/fileHandler.js b/src/lib/contentUtils/fileHandler.js
+index 64f7a8f7a..e9c84b44b 100644
+--- a/src/lib/contentUtils/fileHandler.js
++++ b/src/lib/contentUtils/fileHandler.js
+@@ -34,7 +34,7 @@ const getMode = (filePath, mode) => {
+ export default class FileHandler {
+   static read = (globPattern, mode) => {
+     mode = getMode(globPattern, mode);
+-    const files = globSync(globPattern);
++    const files = globSync(globPattern.replace(/\\/g, '/'), { posix: true });
+ 
+     if (files.length === 0) return null;
+     if (files.length === 1) return parseFile(files[0], mode);
+diff --git a/src/lib/preparedQueries.js b/src/lib/preparedQueries.js
+index 606f69162..d53f16f7b 100644
+--- a/src/lib/preparedQueries.js
++++ b/src/lib/preparedQueries.js
+@@ -58,7 +58,7 @@ export default class PreparedQueries {
+   }
+ 
+   static duplicateReferences() {
+-    const references = globSync(settings.paths.languagesGlob)
++    const references = globSync(settings.paths.languagesGlob.replace(/\\/g, '/'), { posix: true })
+       .map(file => yaml.load(fs.readFileSync(file, 'utf8')))
+       .filter(language => language.references && language.references.length > 1)
+       .reduce((acc, language) => {

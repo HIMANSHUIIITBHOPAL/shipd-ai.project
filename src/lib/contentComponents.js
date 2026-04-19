@@ -27,7 +27,7 @@ export default class ContentComponents {
     fs.ensureDirSync(stylesDestPath);
 
     // Find all .scss files in the source directory
-    const scssFiles = globSync(`${stylesPath}/**/*.scss`.replace(/\\/g, '/'), { posix: true });
+    const scssFiles = globSync(`${stylesPath}/**/*.scss`);
 
     // Process each .scss file
     scssFiles.forEach(file => {
