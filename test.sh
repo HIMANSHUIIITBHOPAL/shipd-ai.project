@@ -8,6 +8,10 @@ while [ "$#" -gt 0 ]; do
   case "$1" in
     --output_path)
       OUTPUT_PATH="$2"
+      if [[ "$OUTPUT_PATH" != /* ]]; then
+        # Ensure absolute path if relative is provided, though usually --output_path is absolute
+        OUTPUT_PATH="$(pwd)/$OUTPUT_PATH"
+      fi
       shift
       ;;
     base)
@@ -27,7 +31,7 @@ mkdir -p "$(dirname "$OUTPUT_PATH")"
 echo '<?xml version="1.0" encoding="UTF-8"?><testsuites></testsuites>' > "$OUTPUT_PATH"
 
 echo "Running npm install to ensure dependencies..."
-npm install > /dev/null 2>&1
+npm install --save-dev vitest > /dev/null 2>&1
 
 echo "Running vitest ($MODE)..."
 
