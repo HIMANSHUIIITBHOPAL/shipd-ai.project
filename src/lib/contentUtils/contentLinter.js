@@ -53,7 +53,7 @@ export default class ContentLinter {
     // Validate Collections
     for (const collection of collections) {
       const colViolations = [];
-      const titleRes = this.validateTitle(collection?.name);
+      const titleRes = this.validateTitle(collection?.title);
       if (!titleRes.isValid) colViolations.push(...titleRes.error);
 
       if (colViolations.length > 0) {

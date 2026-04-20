@@ -7,6 +7,24 @@ vi.mock('#src/lib/contentUtils/config.js', async importOriginal => {
   return { ...original, ...config };
 });
 
+vi.mock('#src/config/settings.js', async importOriginal => {
+  const original = await importOriginal();
+  return {
+    default: {
+      ...original.default,
+      tags: {
+        ...original.default.tags,
+        array: 'Array',
+        iteration: 'Iteration',
+        object: 'Object',
+        comparison: 'Comparison',
+        visual: 'Visual',
+        layout: 'Layout',
+      }
+    }
+  };
+});
+
 vi.mock('#src/lib/contentUtils/fileHandler.js', async importOriginal => {
   const original = await importOriginal();
 

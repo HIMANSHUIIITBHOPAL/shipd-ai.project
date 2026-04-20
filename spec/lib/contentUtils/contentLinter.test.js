@@ -34,9 +34,7 @@ describe('Pipeline Content Linter Integration', () => {
       languages: [],
       collectionSnippets: []
     });
-    process.env.LINT_TEST_PIPELINE = 'true';
     await ContentUtils.prepareContent({ fastHighlight: true });
-    process.env.LINT_TEST_PIPELINE = 'false';
   };
 
   it('should pass pipeline for perfectly valid data', async () => {

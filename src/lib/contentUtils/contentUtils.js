@@ -16,11 +16,8 @@ export default class ContentUtils {
     const { collections, snippets, languages, collectionSnippets } =
       await extractData(fastHighlight ? 'prism' : 'shiki');
 
-    // Run the linter over extracted data to ensure validity.
-    // Skip by default in test environments to allow legacy tests with non-compliant dummy fixtures to pass.
-    if (process.env.NODE_ENV !== 'test' || process.env.LINT_TEST_PIPELINE === 'true') {
-      await ContentLinter.lint(snippets, collections);
-    }
+    // Run the linter over extracted data to ensure validity
+    await ContentLinter.lint(snippets, collections);
 
     const data = {
       collections: exportCollectionData(collections),
