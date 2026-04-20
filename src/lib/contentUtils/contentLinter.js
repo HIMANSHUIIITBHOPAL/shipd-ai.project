@@ -42,8 +42,10 @@ export default class ContentLinter {
       if (!tagsRes.isValid) snippetViolations.push(...tagsRes.error);
 
       // Link validation
-      const linkRes = this.validateLinks(snippet?.fullDescriptionHtml);
-      if (!linkRes.isValid) snippetViolations.push(...linkRes.error);
+      const linkResFull = this.validateLinks(snippet?.fullDescriptionHtml);
+      const linkResDesc = this.validateLinks(snippet?.descriptionHtml);
+      if (!linkResFull.isValid) snippetViolations.push(...linkResFull.error);
+      if (!linkResDesc.isValid) snippetViolations.push(...linkResDesc.error);
 
       if (snippetViolations.length > 0) {
         violations.push({ id: `Snippet ${snippet?.id || 'unknown'}`, errors: snippetViolations });

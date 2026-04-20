@@ -57,6 +57,7 @@ describe('Pipeline Content Linter Integration', () => {
 
   it('should abort pipeline on prohibited localhost URLs', async () => {
     await expect(runPipeline([getValidSnippet({ fullDescriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' })])).rejects.toThrow(/^Content Linter Validation Failed/);
+    await expect(runPipeline([getValidSnippet({ descriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' })])).rejects.toThrow(/^Content Linter Validation Failed/);
   });
 
   it('should abort pipeline on collection validation failures', async () => {

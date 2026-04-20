@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -e
 
 OUTPUT_PATH="results.xml"
 MODE="new"
@@ -21,16 +22,25 @@ done
 
 # Ensure results directory exists
 mkdir -p "$(dirname "$OUTPUT_PATH")"
-# Write a dummy XML in case commands fail and exit early
+
+# Fallback empty testsuite just in case
 echo '<?xml version="1.0" encoding="UTF-8"?><testsuites></testsuites>' > "$OUTPUT_PATH"
 
-# Install all dependencies required for the project (vitest is in package.json devDependencies)
-echo "Installing dependencies..."
+echo "Running npm install to ensure dependencies..."
 npm install > /dev/null 2>&1
 
-echo "Running tests with vitest..."
+echo "Running vitest ($MODE)..."
+
+# Exit code tracking disabled temporarily so we can write it properly
+set +e
+
 if [ "$MODE" = "base" ]; then
-  npx vitest run spec/ --reporter=junit --outputFile.junit="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
+  npx vitest run spec/ --reporter=junit --outputFile="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
 else
-  npx vitest run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile.junit="$OUTPUT_PATH"
+  npx vitest run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile="$OUTPUT_PATH"
 fi
+
+exit_code=$?
+
+echo "Test runner finished with exit code $exit_code."
+exit $exit_code
