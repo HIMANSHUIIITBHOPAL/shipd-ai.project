@@ -19,18 +19,21 @@ while [ "$#" -gt 0 ]; do
   shift
 done
 
+# Always run from /app where node_modules lives
+cd /app
+
 mkdir -p "$(dirname "$OUTPUT_PATH")"
 echo '<?xml version="1.0" encoding="UTF-8"?><testsuites></testsuites>' > "$OUTPUT_PATH"
 
-# Ensure dependencies are installed before running tests
-npm install --prefer-offline 2>/dev/null || npm install
-
-if [ -f "./node_modules/.bin/vitest" ]; then
+# Find vitest: check /app explicitly, then CWD, then PATH
+if [ -f "/app/node_modules/.bin/vitest" ]; then
+  VITEST="/app/node_modules/.bin/vitest"
+elif [ -f "./node_modules/.bin/vitest" ]; then
   VITEST="./node_modules/.bin/vitest"
 elif command -v vitest > /dev/null 2>&1; then
   VITEST="vitest"
 else
-  echo "ERROR: vitest not found after npm install" >&2
+  echo "ERROR: vitest not found" >&2
   exit 1
 fi
 
