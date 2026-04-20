@@ -1,25 +1,44 @@
-#!/bin/bash
+#!/bin/sh
 
-# Configuration
+# Parse arguments
 OUTPUT_PATH="results.xml"
 MODE="new"
 
-# Parse arguments
-while [[ "$#" -gt 0 ]]; do
-    case $1 in
-        --output_path) OUTPUT_PATH="$2"; shift ;;
-        base) MODE="base" ;;
-        new) MODE="new" ;;
-        *) ;;
-    esac
-    shift
+while [ "$#" -gt 0 ]; do
+  case "$1" in
+    --output_path)
+      OUTPUT_PATH="$2"
+      shift
+      ;;
+    base)
+      MODE="base"
+      ;;
+    new)
+      MODE="new"
+      ;;
+  esac
+  shift
 done
 
-# We use the local vitest binary directly to avoid npx registry check hits (403 errors in offline envs)
-VITEST="./node_modules/.bin/vitest"
+# Ensure output directory exists
+mkdir -p "$(dirname "$OUTPUT_PATH")"
 
+# Write a minimal valid XML so the platform always gets a file
+echo '<?xml version="1.0" encoding="UTF-8"?><testsuites></testsuites>' > "$OUTPUT_PATH"
+
+# Find vitest - try local bin first, then global
+if [ -f "./node_modules/.bin/vitest" ]; then
+  VITEST="./node_modules/.bin/vitest"
+elif command -v vitest > /dev/null 2>&1; then
+  VITEST="vitest"
+else
+  echo "ERROR: vitest not found" >&2
+  exit 1
+fi
+
+# Run tests and write JUnit XML
 if [ "$MODE" = "base" ]; then
-    $VITEST run spec/ --reporter=junit --outputFile.junit="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
-elif [ "$MODE" = "new" ]; then
-    $VITEST run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile.junit="$OUTPUT_PATH"
+  $VITEST run spec/ --reporter=junit --outputFile.junit="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
+else
+  $VITEST run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile.junit="$OUTPUT_PATH"
 fi
