@@ -16,8 +16,8 @@ export default class ContentUtils {
     const { collections, snippets, languages, collectionSnippets } =
       await extractData(fastHighlight ? 'prism' : 'shiki');
 
-    // Run the linter over extracted snippets to ensure data validity
-    await ContentLinter.lint(snippets);
+    // Run the linter over extracted data to ensure validity
+    await ContentLinter.lint(snippets, collections);
 
     const data = {
       collections: exportCollectionData(collections),

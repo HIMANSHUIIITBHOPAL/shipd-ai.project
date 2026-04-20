@@ -11,7 +11,7 @@ describe('Pipeline Content Linter Integration', () => {
     vi.resetAllMocks();
   });
 
-  const getBadSnippet = (overrides = {}) => ({
+  const getValidSnippet = (overrides = {}) => ({
     id: 'test-snippet',
     title: 'Valid Title',
     tags: 'javascript',
@@ -20,9 +20,16 @@ describe('Pipeline Content Linter Integration', () => {
     ...overrides,
   });
 
-  const runPipeline = async (snippets) => {
+  const getValidCollection = (overrides = {}) => ({
+    id: 'test-collection',
+    name: 'Valid Collection',
+    description: 'This is a valid collection description.',
+    ...overrides,
+  });
+
+  const runPipeline = async (snippets, collections = [getValidCollection()]) => {
     Extractor.extractData.mockResolvedValue({
-      collections: [],
+      collections,
       snippets,
       languages: [],
       collectionSnippets: []
@@ -32,20 +39,29 @@ describe('Pipeline Content Linter Integration', () => {
   };
 
   it('should pass pipeline for perfectly valid data', async () => {
-    await expect(runPipeline([getBadSnippet()])).resolves.not.toThrow();
+    await expect(runPipeline([getValidSnippet()])).resolves.not.toThrow();
   });
 
   it('should abort pipeline on title validation failures', async () => {
-    await expect(runPipeline([getBadSnippet({ title: '' })])).rejects.toThrow(/Content Linter Validation Failed/);
-    await expect(runPipeline([getBadSnippet({ title: 'A'.repeat(81) })])).rejects.toThrow(/Content Linter Validation Failed/);
+    // Missing title
+    await expect(runPipeline([getValidSnippet({ title: '' })])).rejects.toThrow(/Content Linter Validation Failed/);
+    // Too long title (81 chars)
+    await expect(runPipeline([getValidSnippet({ title: 'A'.repeat(81) })])).rejects.toThrow(/Content Linter Validation Failed/);
   });
 
   it('should abort pipeline on missing or invalid tags', async () => {
-    await expect(runPipeline([getBadSnippet({ tags: '' })])).rejects.toThrow(/Content Linter Validation Failed/);
-    await expect(runPipeline([getBadSnippet({ tags: 'javascript;made-up-tag' })])).rejects.toThrow(/Content Linter Validation Failed/);
+    // Missing tags
+    await expect(runPipeline([getValidSnippet({ tags: '' })])).rejects.toThrow(/Content Linter Validation Failed/);
+    // Invalid tag
+    await expect(runPipeline([getValidSnippet({ tags: 'javascript;made-up-tag' })])).rejects.toThrow(/Content Linter Validation Failed/);
   });
 
   it('should abort pipeline on prohibited localhost URLs', async () => {
-    await expect(runPipeline([getBadSnippet({ fullDescriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' })])).rejects.toThrow(/Content Linter Validation Failed/);
+    await expect(runPipeline([getValidSnippet({ fullDescriptionHtml: '<a href="http://localhost:3000/bad">Click me</a>' })])).rejects.toThrow(/Content Linter Validation Failed/);
+  });
+
+  it('should abort pipeline on collection validation failures', async () => {
+    // Collection missing name
+    await expect(runPipeline([getValidSnippet()], [getValidCollection({ name: '' })])).rejects.toThrow(/Content Linter Validation Failed/);
   });
 });

@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="184" failures="0" errors="0" time="0.3352412">
+    <testsuite name="spec/core/model.test.js" timestamp="2026-04-19T22:06:30.386Z" hostname="LAPTOP-BV4KRH71" tests="13" failures="0" errors="0" skipped="0" time="0.0376091">
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; all &gt; returns all records" time="0.00396">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; returns exact matches correctly" time="0.0007263">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; returns multiple matches correctly" time="0.0007329">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; returns function matches correctly" time="0.0005933">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; returns multiple condition matches correctly" time="0.0005933">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; get first &gt; returns the first record" time="0.0004235">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; where &gt; get last &gt; returns the last record" time="0.0004595">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; order &gt; returns records in the correct order" time="0.0230341">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; scope &gt; returns the correct records with a single scope" time="0.0009931">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; scope &gt; returns the correct records with multiple scopes" time="0.0005899">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; find &gt; returns the correct record" time="0.000371">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; search &gt; returns the correct record" time="0.0008782">
+        </testcase>
+        <testcase classname="spec/core/model.test.js" name="Serializer &gt; searchAll &gt; returns the correct records" time="0.000627">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/core/serializer.test.js" timestamp="2026-04-19T22:06:30.393Z" hostname="LAPTOP-BV4KRH71" tests="2" failures="0" errors="0" skipped="0" time="0.01067">
+        <testcase classname="spec/core/serializer.test.js" name="Serializer &gt; serialize &gt; returns serialized object" time="0.0066554">
+        </testcase>
+        <testcase classname="spec/core/serializer.test.js" name="Serializer &gt; serializeArray &gt; returns serialized array" time="0.000979">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/stringUtils.test.js" timestamp="2026-04-19T22:06:30.395Z" hostname="LAPTOP-BV4KRH71" tests="12" failures="0" errors="0" skipped="0" time="0.0150706">
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; capitalize &gt; should capitalize the first letter of a string" time="0.0025633">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; capitalize &gt; should capitalize the first letter and lowercase the rest of a string" time="0.0004892">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; toKebabCase &gt; should convert a string to kebab case" time="0.0009422">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; convertToValidId &gt; should convert a string to a valid id name" time="0.0008429">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; convertToSeoSlug &gt; should convert a string to a SEO slug" time="0.000506">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; stripMarkdownFormat &gt; should strip markdown format from a string" time="0.00073">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; stripHtmlParagraphsAndLinks &gt; should strip HTML paragraphs and links" time="0.0008011">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; stripHtmlTags &gt; should strip HTML tags from a string" time="0.000469">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; stripHtml &gt; should strip HTML" time="0.0009878">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; normalizedTokens &gt; should normalize tokens" time="0.0025033">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; escapeHtml &gt; should escape HTML" time="0.0004458">
+        </testcase>
+        <testcase classname="spec/lib/stringUtils.test.js" name="StringUtils &gt; formatTag &gt; should format a tag" time="0.0004253">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/models/collection.test.js" timestamp="2026-04-19T22:06:30.400Z" hostname="LAPTOP-BV4KRH71" tests="27" failures="0" errors="0" skipped="0" time="0.0231675">
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; .main &gt; returns main collection" time="0.0038911">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; .collections &gt; returns collections collection" time="0.0005765">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; hasParent &gt; returns false if no parent" time="0.0007704">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; hasParent &gt; returns true if parent exists" time="0.0004514">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isMain &gt; returns true if main collection" time="0.0005115">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isMain &gt; returns false if not main collection" time="0.0005192">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isCollections &gt; returns true if collections collection" time="0.0003884">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isCollections &gt; returns false if not collections collection" time="0.0003267">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isPrimary &gt; returns true if primary collection" time="0.0007831">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isPrimary &gt; returns false if not primary collection" time="0.0004555">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isSecondary &gt; returns false if primary collection" time="0.000439">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; isSecondary &gt; returns true if secondary collection" time="0.0003522">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; rootUrl &gt; returns the slug if it is a parent" time="0.0004125">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; rootUrl &gt; returns the parent slug if it has a parent" time="0.0007747">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; siblings &gt; returns siblings if it has a parent" time="0.0012782">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; siblings &gt; returns an empty array if it has no parent" time="0.0004955">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; siblingsExceptSelf &gt; returns siblings except self if it has a parent" time="0.0004282">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; siblingsExceptSelf &gt; returns an empty array if it has no parent" time="0.0003038">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; firstPageSlug &gt; returns first page slug" time="0.0002838">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; listedSnippets &gt; returns listed snippets" time="0.0012109">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; formattedSnippetCount &gt; returns formatted snippet count" time="0.0003192">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; pageCount &gt; returns page count" time="0.000347">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; allPageSlugs &gt; returns all page slugs" time="0.0004834">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; allPageFullUrls &gt; returns all page full urls" time="0.0004397">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; matchesTag &gt; returns true if collection matches tag" time="0.0003118">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; matchesTag &gt; returns false if collection does not match tag" time="0.000265">
+        </testcase>
+        <testcase classname="spec/models/collection.test.js" name="Collection &gt; pages &gt; returns page objects with the correct snippet" time="0.0012124">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/models/contentModel.test.js" timestamp="2026-04-19T22:06:30.408Z" hostname="LAPTOP-BV4KRH71" tests="12" failures="0" errors="0" skipped="0" time="0.060384">
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; slug &gt; returns the slugified id" time="0.0044571">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; slugId &gt; returns the last part of the slug" time="0.0006863">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; url &gt; returns the slug for snippets" time="0.0008108">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; url &gt; returns the first page slug for collections" time="0.0005378">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; fullUrl &gt; returns the full url for the record" time="0.000535">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; formattedDescription &gt; strips html tags and paragraphs from the description" time="0.0009221">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; seoDescription &gt; strips html from the description" time="0.0006865">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; isSnippet &gt; returns true if the record is a snippet" time="0.0004617">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; type &gt; returns the model name in lowercase" time="0.0006863">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; serializeAs &gt; serializes the object using the specified serializer" time="0.0449125">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; context &gt; returns the snippet context for snippets" time="0.0009889">
+        </testcase>
+        <testcase classname="spec/models/contentModel.test.js" name="ContentModel &gt; context &gt; returns the collection context for collections" time="0.00051">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/models/snippet.test.js" timestamp="2026-04-19T22:06:30.412Z" hostname="LAPTOP-BV4KRH71" tests="27" failures="0" errors="0" skipped="0" time="0.0611087">
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; tags &gt; returns tags" time="0.00388">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; hasLanguage &gt; returns false if no language" time="0.0005783">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; hasLanguage &gt; returns true if language exists" time="0.0005332">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; seoTitle &gt; returns title if no language" time="0.0009081">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; seoTitle &gt; returns title with language, if exists" time="0.000664">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; seoTitle &gt; returns title with formatted primary tag if language is JavaScript and primary tag is Node" time="0.0005349">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; primaryTag &gt; returns primary tag" time="0.0003655">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedPrimaryTag &gt; returns formatted primary tag" time="0.0004808">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedPrimaryTag &gt; returns formatted primary tag if special tag" time="0.0006714">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedMiniPreviewTag &gt; returns article mini preview tag if no language" time="0.0005229">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedMiniPreviewTag &gt; returns language name if language exists" time="0.0003901">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedTags &gt; returns formatted tags" time="0.0005494">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedTags &gt; prep});s language name if language exists" time="0.0003432">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedPreviewTags &gt; returns formatted primary tag if no language" time="0.0009884">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; formattedPreviewTags &gt; returns language name if language exists" time="0.0004245">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; githubUrl &gt; returns GitHub URL" time="0.0006261">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isScheduled &gt; returns false if not scheduled" time="0.0003737">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isScheduled &gt; returns true if scheduled" time="0.0002967">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isPublished &gt; returns true if published" time="0.0002929">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isPublished &gt; returns false if not published" time="0.0002733">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isListed &gt; returns true if listed" time="0.0003525">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; isListed &gt; returns false if not listed" time="0.0002357">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; dateFormatted &gt; returns formatted date" time="0.0402946">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; dateMachineFormatted &gt; returns machine formatted date" time="0.0005018">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; hasCollection &gt; returns false if snippet has no collection" time="0.0004526">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; hasCollection &gt; returns true if snippet has collection" time="0.0001899">
+        </testcase>
+        <testcase classname="spec/models/snippet.test.js" name="Snippet &gt; page &gt; returns a page object with the correct snippet" time="0.0003524">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/presenters/breadcrumbPresenter.test.js" timestamp="2026-04-19T22:06:30.418Z" hostname="LAPTOP-BV4KRH71" tests="2" failures="0" errors="0" skipped="0" time="0.0104414">
+        <testcase classname="spec/presenters/breadcrumbPresenter.test.js" name="BreadcrumbPresenter &gt; breadcrumbs &gt; returns the breadcrumbs for a snippet" time="0.0063764">
+        </testcase>
+        <testcase classname="spec/presenters/breadcrumbPresenter.test.js" name="BreadcrumbPresenter &gt; recommendedCollection &gt; returns the recommended collection for a snippet" time="0.0010512">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/presenters/coverPresenter.test.js" timestamp="2026-04-19T22:06:30.420Z" hostname="LAPTOP-BV4KRH71" tests="6" failures="0" errors="0" skipped="0" time="0.0078654">
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverUrl &gt; returns the cover url for a snippet" time="0.0026791">
+        </testcase>
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverUrl &gt; returns the cover url for a snippet with full size" time="0.0003413">
+        </testcase>
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverUrl &gt; returns the cover url for a collection" time="0.000445">
+        </testcase>
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverSrcset &gt; returns the cover srcset for a snippet" time="0.0008571">
+        </testcase>
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverSrcset &gt; returns the cover srcset for a snippet with full size" time="0.0006478">
+        </testcase>
+        <testcase classname="spec/presenters/coverPresenter.test.js" name="CoverPresenter &gt; coverSrcset &gt; returns the cover srcset for a collection" time="0.0004459">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/presenters/recommendationPresenter.test.js" timestamp="2026-04-19T22:06:30.422Z" hostname="LAPTOP-BV4KRH71" tests="5" failures="0" errors="0" skipped="0" time="0.0095101">
+        <testcase classname="spec/presenters/recommendationPresenter.test.js" name="RecommendationPresenter &gt; #recommend_snippets &gt; returns snippets that are not the current snippet" time="0.0041709">
+        </testcase>
+        <testcase classname="spec/presenters/recommendationPresenter.test.js" name="RecommendationPresenter &gt; #recommend_snippets &gt; does not return the same snippet in another language" time="0.0006007">
+        </testcase>
+        <testcase classname="spec/presenters/recommendationPresenter.test.js" name="RecommendationPresenter &gt; #recommend_snippets &gt; does not return unlisted snippets" time="0.0010082">
+        </testcase>
+        <testcase classname="spec/presenters/recommendationPresenter.test.js" name="RecommendationPresenter &gt; #recommend_snippets &gt; returns snippets in the same language with the same tags" time="0.0004679">
+        </testcase>
+        <testcase classname="spec/presenters/recommendationPresenter.test.js" name="RecommendationPresenter &gt; #recommend_snippets &gt; returns snippets in the same language with similar tags" time="0.0004484">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/presenters/sublinkPresenter.test.js" timestamp="2026-04-19T22:06:30.424Z" hostname="LAPTOP-BV4KRH71" tests="4" failures="0" errors="0" skipped="0" time="0.03526">
+        <testcase classname="spec/presenters/sublinkPresenter.test.js" name="SublinkPresenter &gt; sublinks &gt; returns all primary collections for the main collection" time="0.0051196">
+        </testcase>
+        <testcase classname="spec/presenters/sublinkPresenter.test.js" name="SublinkPresenter &gt; sublinks &gt; returns all children for the primary collection" time="0.0256892">
+        </testcase>
+        <testcase classname="spec/presenters/sublinkPresenter.test.js" name="SublinkPresenter &gt; sublinks &gt; returns the parent collection sublink for the secondary collection" time="0.0010591">
+        </testcase>
+        <testcase classname="spec/presenters/sublinkPresenter.test.js" name="SublinkPresenter &gt; sublinks &gt; returns the parent collection sublink for orphaned secondary collections" time="0.000518">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/contentUtils/contentUtils.test.js" timestamp="2026-04-19T22:06:30.426Z" hostname="LAPTOP-BV4KRH71" tests="28" failures="0" errors="0" skipped="1" time="0.0150792">
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output content to the correct path" time="0.0022416">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output all content keys" time="0.0004501">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct language data &gt; should output the correct number of languages" time="0.0002197">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct language data &gt; should output the correct language objects" time="0.0007585">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection data &gt; should output the correct number of collections" time="0.00021">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection data &gt; should output the correct collection ids" time="0.000389">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection data &gt; should produce a ranking between 0 and 1 for all collections" time="0.0008497">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct number of collection snippets" time="0.0003038">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct collection snippet objects for plain tag matchers" time="0.0003099">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct collection snippet objects for language matchers" time="0.0008601">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct collection snippet objects for language and tag matchers" time="0.0003564">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct collection snippet objects for specific snippet ids &gt; should output the correct collection snippets" time="0.0002611">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct collection snippet data &gt; should output the correct collection snippet objects for specific snippet ids &gt; should output the collection snippets in the right order" time="0.0010266">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should output the correct number of snippets" time="0.0004433">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should output the correct snippet ids" time="0.0003225">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should produce a ranking between 0 and 1 for all snippets" time="0.0005605">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should produce a semicolon separated list of tags" time="0.0003607">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should match to the correct languageId" time="0.0003232">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should produce the correct listed attribute" time="0.0002041">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; should produce an HTML content and description" time="0.0005805">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should highlight code blocks" time="0">
+            <skipped/>
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should link inline code only if the language references match it" time="0.0002969">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should safeguard only external links" time="0.0002796">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should transform headings" time="0.000129">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should transform image paths" time="0.0001327">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should wrap tables" time="0.0001198">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should embed codepens from links" time="0.0002438">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/contentUtils.test.js" name="ContentUtils.prepareContent &gt; should output the correct snippet data &gt; Markdown parsing &gt; should transform admonitions" time="0.0001768">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/contentUtils/ranker.test.js" timestamp="2026-04-19T22:06:30.434Z" hostname="LAPTOP-BV4KRH71" tests="3" failures="0" errors="0" skipped="0" time="0.0076776">
+        <testcase classname="spec/lib/contentUtils/ranker.test.js" name="Ranker.rankIndexableContent &gt; should rank indexable content" time="0.0031767">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/ranker.test.js" name="Ranker.rankIndexableContent &gt; should not exceed the keyword score limit" time="0.0008432">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/ranker.test.js" name="Ranker.rankIndexableContent &gt; should not exceed the keyword count limit" time="0.0005917">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/contentUtils/tocReader.test.js" timestamp="2026-04-19T22:06:30.435Z" hostname="LAPTOP-BV4KRH71" tests="2" failures="0" errors="0" skipped="0" time="0.0071878">
+        <testcase classname="spec/lib/contentUtils/tocReader.test.js" name="TocReader.readToC &gt; should read and build a table of contents from HTML" time="0.0038661">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/tocReader.test.js" name="TocReader.readToC &gt; should return undefined if no headings are found" time="0.0004561">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/search/utils.test.js" timestamp="2026-04-19T22:06:30.436Z" hostname="LAPTOP-BV4KRH71" tests="14" failures="0" errors="0" skipped="0" time="0.0149712">
+        <testcase classname="spec/lib/search/utils.test.js" name="splitTokens &gt; produces the excpected resutls &quot;a b c&quot; -&gt; a,b,c)" time="0.0046737">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="splitTokens &gt; produces the excpected resutls &quot;a-z0-9&quot; -&gt; a-z0-9)" time="0.0005065">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="splitTokens &gt; produces the excpected resutls &quot;a.b.c&quot; -&gt; a,b,c)" time="0.0005935">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="splitTokens &gt; produces the excpected resutls &quot;a.b - c d3&quot; -&gt; a,b,-,c,d3)" time="0.0006632">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;a&quot; -&gt; a)" time="0.0007827">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;-a&quot; -&gt; a)" time="0.000408">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;a-&quot; -&gt; a)" time="0.0002534">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;-a-&quot; -&gt; a)" time="0.0002298">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;&apos;a&quot; -&gt; a)" time="0.0006554">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;a&apos;&quot; -&gt; a)" time="0.0003801">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;&apos;a&apos;&quot; -&gt; a)" time="0.0003255">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;-a&apos;&quot; -&gt; a)" time="0.0002182">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="cleanTokenPunctuation &gt; produces the excpected resutls &quot;&apos;a-&quot; -&gt; a)" time="0.0004047">
+        </testcase>
+        <testcase classname="spec/lib/search/utils.test.js" name="deserializeTokens &gt; produces the excpected resutls" time="0.001332">
+        </testcase>
+    </testsuite>
+    <testsuite name="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" timestamp="2026-04-19T22:06:30.440Z" hostname="LAPTOP-BV4KRH71" tests="27" failures="0" errors="0" skipped="0" time="0.0192386">
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple delimited strings &gt; &quot;a title=&quot;my title&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;my title&apos;, type: &apos;string&apos; } ]" time="0.004474">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple delimited strings &gt; &quot;a title=&apos;my title&apos; b&quot; to [ { key: &apos;title&apos;, value: &apos;my title&apos;, type: &apos;string&apos; } ]" time="0.0007351">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple delimited strings &gt; &quot;a title=&quot;my title&quot; b label=&apos;a label&apos; c&quot; to [ { key: &apos;title&apos;, value: &apos;my title&apos;, type: &apos;string&apos; }, { key: &apos;label&apos;, value: &apos;a label&apos;, type: &apos;string&apos; } ]" time="0.0011471">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple delimited strings &gt; &quot;a &quot;my title&quot; b label=&apos;a label&apos; c&quot; to [ { key: null, value: &apos;my title&apos;, type: &apos;string&apos; }, { key: &apos;label&apos;, value: &apos;a label&apos;, type: &apos;string&apos; } ]" time="0.0009165">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;\&quot;cool&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;&quot;cool&apos;, type: &apos;string&apos; } ]" time="0.0006268">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;cool\&quot;&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;cool&quot;&apos;, type: &apos;string&apos; } ]" time="0.0004094">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;cool\&quot; and more&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;cool&quot; and more&apos;, type: &apos;string&apos; } ]" time="0.0003786">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;cool\\\&quot; and more&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;cool\&quot; and more&apos;, type: &apos;string&apos; } ]" time="0.0002053">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;cool\\&quot; and more&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;cool\&apos;, type: &apos;string&apos; } ]" time="0.0002992">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;cool\\&quot; &quot;and more&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;cool\&apos;, type: &apos;string&apos; } ]" time="0.0002031">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with escapes &gt; &quot;a title=&quot;C:\\App\\Data&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;C:\App\Data&apos;, type: &apos;string&apos; } ]" time="0.0001366">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with delimiters and separators &gt; &quot;a title=&apos;= &quot;wow!&apos; b&quot; to [ { key: &apos;title&apos;, value: &apos;= &quot;wow!&apos;, type: &apos;string&apos; } ]" time="0.0002357">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with delimiters and separators &gt; &quot;a title=&quot;= \&quot;wow!\&quot;&quot; b&quot; to [ { key: &apos;title&apos;, value: &apos;= &quot;wow!&quot;&apos;, type: &apos;string&apos; } ]" time="0.0001334">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses delimited strings with delimiters and separators &gt; &quot;a title=&quot;= \&quot;wow!\&quot;&quot; label=&apos;= &quot;cool!&apos; b&quot; to [ { key: &apos;title&apos;, value: &apos;= &quot;wow!&quot;&apos;, type: &apos;string&apos; }, { key: &apos;label&apos;, value: &apos;= &quot;cool!&apos;, type: &apos;string&apos; } ]" time="0.0005056">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses undelimited key-value pairs &gt; &quot;a b=wow c=cool d&quot; to [ { key: &apos;b&apos;, value: &apos;wow&apos;, type: &apos;string&apos; }, { key: &apos;c&apos;, value: &apos;cool&apos;, type: &apos;string&apos; } ]" time="0.0004238">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses undelimited booleans &gt; &quot;a b c&quot; to [ { key: &apos;a&apos;, value: true, type: &apos;boolean&apos; }, { key: &apos;b&apos;, value: true, type: &apos;boolean&apos; }, { key: &apos;c&apos;, value: true, type: &apos;boolean&apos; } ]" time="0.0003">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses undelimited booleans &gt; &quot;a b=true c=false d=TRUE e=fAlSe f&quot; to [ { key: &apos;a&apos;, value: true, type: &apos;boolean&apos; }, { key: &apos;b&apos;, value: true, type: &apos;boolean&apos; }, { key: &apos;c&apos;, value: false, type: &apos;boolean&apos; }, { key: &apos;d&apos;, value: true, type: &apos;boolean&apos; }, { key: &apos;e&apos;, value: false, type: &apos;boolean&apos; }, { key: &apos;f&apos;, value: true, type: &apos;boolean&apos; } ]" time="0.0003873">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple ranges &gt; &quot;a b={1-4} c={3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos; } ]" time="0.0010447">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses simple ranges &gt; &quot;a b={1-4} c={3} {2-4} {3,5-7} {2,5,8,12} {7 -8, 3,10- 11}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos; }, { key: null, value: [ 2, 3, 4 ], type: &apos;range&apos; }, { key: null, value: [ 3, 5, 6, 7 ], type: &apos;range&apos; }, { key: null, value: [ 2, 5, 8, 12 ], type: &apos;range&apos; }, { key: null, value: [ 7, 8, 3, 10, 11 ], type: &apos;range&apos; } ]" time="0.0006476">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={c:1-4} c={d: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;c&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d&apos; } ]" time="0.0003866">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={&quot;c&quot;:1-4} c={&apos;d&apos;: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;c&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d&apos; } ]" time="0.0003634">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={&quot;c:d&quot;:1-4} c={&apos;d:e&apos;: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;c:d&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d:e&apos; } ]" time="0.0001951">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={&quot;\&quot;c&quot;:1-4} c={&apos;d\&apos;&apos;: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;&quot;c&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d\&apos;&apos; } ]" time="0.0002748">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={&quot;c{d}&quot;:1-4} c={&apos;d{e}&apos;: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;c{d}&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d{e}&apos; } ]" time="0.0002514">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses labelled ranges &gt; &quot;a b={&quot;c\&quot;{d}&quot;:1-4} c={&apos;d{e\&apos;}&apos;: 3}&quot; to [ { key: &apos;b&apos;, value: [ 1, 2, 3, 4 ], type: &apos;range&apos;, label: &apos;c&quot;{d}&apos; }, { key: &apos;c&apos;, value: [ 3 ], type: &apos;range&apos;, label: &apos;d{e\&apos;}&apos; } ]" time="0.0002095">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses regex &gt; &quot;a /^d{1,2}[a-z]+/ b&quot; to [ { key: null, value: /^d{1,2}[a-z]+/, type: &apos;regexp&apos; } ]" time="0.0003301">
+        </testcase>
+        <testcase classname="spec/lib/contentUtils/markdownParser/codeHighlighters/utils/metaParser.test.js" name="parseMeta &gt; parses regex &gt; &quot;a b=/^d{1,2}\/[a-z]+/ b&quot; to [ { key: &apos;b&apos;, value: /^d{1,2}\/[a-z]+/[a-z]+, type: &apos;regexp&apos; } ]" time="0.0002099">
+        </testcase>
+    </testsuite>
+</testsuites>

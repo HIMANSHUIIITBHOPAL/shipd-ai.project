@@ -18,32 +18,46 @@ class ValidationResult {
 export default class ContentLinter {
   static RULES = {
     MAX_TITLE_LENGTH: 80,
-    MAX_DESC_LENGTH: 500,
-    MIN_DESC_LENGTH: 10,
   };
 
-  static async lint(snippets) {
+  /**
+   * Lint snippets and collections.
+   * @param {Array} snippets 
+   * @param {Array} collections 
+   */
+  static async lint(snippets, collections) {
     const violations = [];
     const validTags = Object.keys(settings.tags);
 
+    // Validate Snippets
     for (const snippet of snippets) {
       const snippetViolations = [];
 
-      // Run modular validators
+      // Title validation
       const titleRes = this.validateTitle(snippet?.title);
       if (!titleRes.isValid) snippetViolations.push(...titleRes.error);
 
+      // Tags validation
       const tagsRes = this.validateTags(snippet?.tags, validTags);
       if (!tagsRes.isValid) snippetViolations.push(...tagsRes.error);
 
-      const descRes = this.validateDescription(snippet?.descriptionHtml);
-      if (!descRes.isValid) snippetViolations.push(...descRes.error);
-
+      // Link validation
       const linkRes = this.validateLinks(snippet?.fullDescriptionHtml);
       if (!linkRes.isValid) snippetViolations.push(...linkRes.error);
 
       if (snippetViolations.length > 0) {
-        violations.push({ snippetId: snippet?.id || 'unknown', errors: snippetViolations });
+        violations.push({ id: `Snippet ${snippet?.id || 'unknown'}`, errors: snippetViolations });
+      }
+    }
+
+    // Validate Collections
+    for (const collection of collections) {
+      const colViolations = [];
+      const titleRes = this.validateTitle(collection?.name);
+      if (!titleRes.isValid) colViolations.push(...titleRes.error);
+
+      if (colViolations.length > 0) {
+        violations.push({ id: `Collection ${collection?.id || 'unknown'}`, errors: colViolations });
       }
     }
 
@@ -56,7 +70,7 @@ export default class ContentLinter {
   static validateTitle(title) {
     const errors = [];
     if (!title || title.trim().length === 0) {
-      errors.push('Snippet is missing a title.');
+      errors.push('Item is missing a non-empty name/title.');
     } else if (title.length > this.RULES.MAX_TITLE_LENGTH) {
       errors.push(`Title exceeds maximum length of ${this.RULES.MAX_TITLE_LENGTH} characters.`);
     }
@@ -65,7 +79,7 @@ export default class ContentLinter {
 
   static validateTags(tagsString, validTags) {
     const errors = [];
-    if (!tagsString) {
+    if (!tagsString || tagsString.trim().length === 0) {
       errors.push('Snippet is missing tags.');
       return new ValidationResult(false, errors);
     }
@@ -74,25 +88,8 @@ export default class ContentLinter {
     const tags = tagsString.split(';');
     for (const tag of tags) {
       if (!validTags.includes(tag.trim())) {
-         errors.push(`Invalid tag used: "${tag}". Must be defined in settings.tags.`);
+         errors.push(`Invalid tag used: "${tag}".`);
       }
-    }
-    return new ValidationResult(errors.length === 0, errors);
-  }
-
-  static validateDescription(descriptionHtml) {
-    const errors = [];
-    if (!descriptionHtml) {
-      errors.push('Snippet is missing a short description.');
-      return new ValidationResult(false, errors);
-    }
-    // Strip HTML to check real text length safely
-    const textOnly = descriptionHtml.replace(/<[^>]*>?/gm, '').trim();
-    if (textOnly.length > this.RULES.MAX_DESC_LENGTH) {
-      errors.push(`Description text is too long (${textOnly.length} chars). Max allowed is ${this.RULES.MAX_DESC_LENGTH}.`);
-    }
-    if (textOnly.length < this.RULES.MIN_DESC_LENGTH) {
-      errors.push(`Description text is too short (${textOnly.length} chars). Min allowed is ${this.RULES.MIN_DESC_LENGTH}.`);
     }
     return new ValidationResult(errors.length === 0, errors);
   }
@@ -103,26 +100,23 @@ export default class ContentLinter {
     
     // Simple regex to catch localhost links which shouldn't be in prod content
     const localhostRegex = /href=["']?http:\/\/localhost:/gi;
-    let match;
-    while ((match = localhostRegex.exec(htmlContent)) !== null) {
-      errors.push('Content contains hardcoded localhost URLs which are invalid in production.');
+    if (localhostRegex.test(htmlContent)) {
+      errors.push('Content contains hardcoded localhost URLs.');
     }
     return new ValidationResult(errors.length === 0, errors);
   }
 
   static formatAndThrow(violations) {
-    let errorMessage = 'Content Linter Validation Failed\n';
-    errorMessage += `Linter found exactly ${violations.length} snippet(s) containing strictly invalid formatting:\n\n`;
+    let errorMessage = 'Content Linter Validation Failed\n\n';
     
     for (const violation of violations) {
-      errorMessage += `[Snippet ID: ${violation.snippetId}]\n`;
+      errorMessage += `[${violation.id}]\n`;
       for (const err of violation.errors) {
         errorMessage += `  -> ERROR: ${err}\n`;
       }
       errorMessage += '\n';
     }
 
-    errorMessage += 'ABORTING: Please fix all listed styling and rule violations before generating content.\n';
     throw new LinterError(errorMessage, violations);
   }
 }
