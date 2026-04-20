@@ -53,7 +53,7 @@
     "create": "bin/prepare create",
     "create-component": "bin/prepare create-component",
     "console": "bin/console",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "license": "MIT",
   "repository": {
