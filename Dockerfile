@@ -4,8 +4,8 @@ WORKDIR /app
 COPY . .
 
 RUN npm install
+RUN npm install -g vitest@3.1.1
 
-# Add node_modules/.bin to PATH so vitest is always findable regardless of CWD
 ENV PATH="/app/node_modules/.bin:$PATH"
 
 CMD ["/bin/bash"]

@@ -30,18 +30,15 @@ mkdir -p "$(dirname "$OUTPUT_PATH")"
 # Fallback empty testsuite just in case
 echo '<?xml version="1.0" encoding="UTF-8"?><testsuites></testsuites>' > "$OUTPUT_PATH"
 
-echo "Running npm install to ensure dependencies..."
-npm install --save-dev vitest > /dev/null 2>&1
-
 echo "Running vitest ($MODE)..."
 
 # Exit code tracking disabled temporarily so we can write it properly
 set +e
 
 if [ "$MODE" = "base" ]; then
-  npx vitest run spec/ --reporter=junit --outputFile="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
+  npx --yes vitest run spec/ --reporter=junit --outputFile="$OUTPUT_PATH" --exclude "**/*contentLinter.test.js"
 else
-  npx vitest run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile="$OUTPUT_PATH"
+  npx --yes vitest run spec/lib/contentUtils/contentLinter.test.js --reporter=junit --outputFile="$OUTPUT_PATH"
 fi
 
 exit_code=$?
